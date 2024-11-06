@@ -36,10 +36,10 @@
     font-family: "Roboto", ubuntu;
 }
 
-.container {
+body {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 5fr;
     grid-template-areas: 
         "sidebar header"
         "sidebar main";
@@ -47,40 +47,63 @@
 
 .header {
     grid-area: header;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
     padding: 15px;
     padding-right: 45px;
+    gap: 25px;
+    grid-template-areas: 
+        "search profile"
+        "greeting buttons";
+}
+
+.header .profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .profile img {
+    height: 2.5rem;
+    border-radius: 30px;
+}
+
+.header svg {
+    height: 1.25rem;
+}
+
+.search {
+    grid-area: search;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 input {
     border-radius: 18px;
     border: none;
     background-color: #e8e8ee;
-    width: 45%;
+    width: 90%;
     height: 24px;
-}
-
-.header .top {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
 }
 
 .profile {
     font-size: 0.9rem;
+    grid-area: profile;
+    justify-self: end;
+    gap: 15px;
 }
 
-.header .bottom {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
+.greeting {
+    grid-area: greeting;
 }
 
 .buttons {
-    width: 30%;
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
+    grid-area: buttons;
+    justify-self: end;
 }
 
 .buttons button {
@@ -89,7 +112,7 @@ input {
     align-items: center;
     border-radius: 18px;
     flex-basis: auto;
-    width: 28%;
+    width: 5rem;
     height: 30px;
     border: none;
     background-color: #60a5fa;
@@ -256,4 +279,16 @@ li svg {
 .trending .content .card .text {
     display: flex;
     flex-direction: column;
+}
+
+.projects .title {
+    font-weight: 500;
+}
+
+.announcements .title {
+    font-weight: 500;
+}
+
+.trending .title {
+    font-weight: 500;
 }
