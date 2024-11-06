@@ -50,8 +50,7 @@ body {
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: 1fr 1fr;
-    padding: 15px;
-    padding-right: 45px;
+    padding: 8px 45px 15px 45px;
     gap: 25px;
     grid-template-areas: 
         "search profile"
@@ -86,6 +85,9 @@ input {
     background-color: #e8e8ee;
     width: 90%;
     height: 24px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-family: inherit;
 }
 
 .profile {
@@ -97,6 +99,28 @@ input {
 
 .greeting {
     grid-area: greeting;
+    display: flex;
+    gap: 10px;
+}
+
+.greeting img {
+    height: 3rem;
+    border-radius: 30px;
+}
+
+.greeting .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.greeting .text .template {
+    font-size: 0.75rem;
+    font-weight: 450;
+}
+
+.greeting .text .name {
+    font-size: 1.3rem;
+    font-weight: 550;
 }
 
 .buttons {
